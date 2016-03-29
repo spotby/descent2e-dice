@@ -21307,7 +21307,7 @@
 	
 	      return _react2.default.createElement(
 	        _reactRouter.Router,
-	        { history: _reactRouter.browserHistory, onUpdate: function onUpdate() {
+	        { history: _reactRouter.hashHistory, onUpdate: function onUpdate() {
 	            return _this2.handleRouteChange();
 	          } },
 	        routes
