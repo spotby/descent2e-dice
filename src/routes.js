@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import * as Pages from './pages/index';
 
-export const basePath = '/descent2e-dice';
+export const basePath = '';
 
 export default class Routes extends Component {
   render() {
