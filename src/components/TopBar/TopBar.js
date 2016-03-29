@@ -4,6 +4,8 @@ import {Link} from 'react-router';
 
 import './TopBar.scss';
 
+import {basePath} from '../../routes.js';
+
 export default class TopBar extends Component {
   render(){
     return (
@@ -19,8 +21,8 @@ export default class TopBar extends Component {
 
         <div className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
-            <li className={this.props.location.pathname == '/' ? 'active' : ''}><Link to="/">Descent 2nd Edition Dice</Link></li>
-            <li className={this.props.location.pathname == '/about' ? 'active' : ''}><Link to="/about">About</Link></li>
+            <li className={this.props.location.pathname == basePath + '/' ? 'active' : ''}><Link to={basePath + '/'}>Descent 2nd Edition Dice</Link></li>
+            <li className={this.props.location.pathname == basePath + '/about' ? 'active' : ''}><Link to={basePath + '/about'}>About</Link></li>
           </ul>
         </div>
       </nav>

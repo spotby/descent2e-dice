@@ -4,15 +4,16 @@ import {connect} from 'react-redux';
 
 import * as Pages from './pages/index';
 
+export const basePath = '/descent2e-dice';
+
 export default class Routes extends Component {
   render() {
-
     //Fix for "Warning: You cannot change <Router routes>; it will be ignored"
     //https://github.com/reactjs/react-router/issues/2704
     const routes =
-      <Route path="/" component={Pages.AppPage}>
+      <Route path={basePath + '/'} component={Pages.AppPage}>
         <IndexRoute title="Home" component={Pages.HomePage} />
-        <Route path="/about" title="AboutPage" component={Pages.AboutPage} />
+        <Route path={'about'} title="AboutPage" component={Pages.AboutPage} />
         <Route path="*" component={Pages.Error404Page}/>
       </Route>;
 
