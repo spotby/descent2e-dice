@@ -21253,6 +21253,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.basePath = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -21278,6 +21279,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var basePath = exports.basePath = '';
+	
 	var Routes = function (_Component) {
 	  _inherits(Routes, _Component);
 	
@@ -21296,15 +21299,15 @@
 	      //https://github.com/reactjs/react-router/issues/2704
 	      var routes = _react2.default.createElement(
 	        _reactRouter.Route,
-	        { path: '/', component: Pages.AppPage },
+	        { path: basePath + '/', component: Pages.AppPage },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { title: 'Home', component: Pages.HomePage }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/about', title: 'AboutPage', component: Pages.AboutPage }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'about', title: 'AboutPage', component: Pages.AboutPage }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '*', component: Pages.Error404Page })
 	      );
 	
 	      return _react2.default.createElement(
 	        _reactRouter.Router,
-	        { history: _reactRouter.hashHistory, onUpdate: function onUpdate() {
+	        { history: _reactRouter.browserHistory, onUpdate: function onUpdate() {
 	            return _this2.handleRouteChange();
 	          } },
 	        routes
@@ -26476,6 +26479,8 @@
 	
 	__webpack_require__(243);
 	
+	var _routes = __webpack_require__(183);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26523,19 +26528,19 @@
 	            { className: 'nav navbar-nav' },
 	            _react2.default.createElement(
 	              'li',
-	              { className: this.props.location.pathname == '/' ? 'active' : '' },
+	              { className: this.props.location.pathname == _routes.basePath + '/' ? 'active' : '' },
 	              _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: '/' },
+	                { to: _routes.basePath + '/' },
 	                'Descent 2nd Edition Dice'
 	              )
 	            ),
 	            _react2.default.createElement(
 	              'li',
-	              { className: this.props.location.pathname == '/about' ? 'active' : '' },
+	              { className: this.props.location.pathname == _routes.basePath + '/about' ? 'active' : '' },
 	              _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: '/about' },
+	                { to: _routes.basePath + '/about' },
 	                'About'
 	              )
 	            )
