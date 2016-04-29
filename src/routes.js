@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import {connect} from 'react-redux';
 
 import * as Pages from './pages/index';
@@ -16,7 +16,7 @@ export default class Routes extends Component {
       </Route>;
 
     return (
-      <Router history={browserHistory} onUpdate={() => this.handleRouteChange()}>
+      <Router history={hashHistory} onUpdate={() => this.handleRouteChange()}>
         {routes}
       </Router>
     );
