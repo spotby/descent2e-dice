@@ -1,0 +1,13 @@
+.bottom-bar{
+  position: fixed;
+  bottom: 0;
+  background-color: #eee;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+
+  .roll-btn{
+    margin-right: 15px;
+    width: 50px;
+  }
+}

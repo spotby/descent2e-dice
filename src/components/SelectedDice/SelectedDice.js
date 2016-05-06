@@ -4,30 +4,20 @@ import {Link} from 'react-router';
 
 import './SelectedDice.scss';
 
-import BlueDice from 'components/Dice/BlueDice/BlueDice';
-import RedDice from 'components/Dice/RedDice/RedDice';
-import YellowDice from 'components/Dice/YellowDice/YellowDice';
-import GreenDice from 'components/Dice/GreenDice/GreenDice';
-import GrayDice from 'components/Dice/GrayDice/GrayDice';
-import BlackDice from 'components/Dice/BlackDice/BlackDice';
-import BrownDice from 'components/Dice/BrownDice/BrownDice';
-
-import {removeDice} from 'actions/Dice/DiceActions';
+import Dice from 'components/Dice/Dice';
 
 export default class SelectedDice extends Component {
   constructor(){
     super();
 
     this.displayDice = this.displayDice.bind(this);
-    this.handleRemove = this.handleRemove.bind(this);
-    this.handleReroll = this.handleReroll.bind(this);
   }
 
   render(){
     const dice = this.displayDice();
 
     return (
-      <div className="selected-dice-container container-fluid">
+      <div className={(this.props.Dice.selected.length) ? "selected-dice-container container-fluid" : "selected-dice-container container-fluid hide"}>
         <p>Selected Dice</p>
 
         <div className="selected-dice">
@@ -42,37 +32,10 @@ export default class SelectedDice extends Component {
     const output = [];
 
     $.each(this.props.Dice.selected, function(i, item){
-      if(item.color == 'blue'){
-        output.push(<BlueDice key={i} index={i} handleRemove={context.handleRemove} handleReroll={context.handleReroll} />);
-      }
-      else if(item.color == 'red'){
-        output.push(<RedDice key={i} index={i} handleRemove={context.handleRemove} handleReroll={context.handleReroll} />);
-      }
-      else if(item.color == 'yellow'){
-        output.push(<YellowDice key={i} index={i} handleRemove={context.handleRemove} handleReroll={context.handleReroll} />);
-      }
-      else if(item.color == 'green'){
-        output.push(<GreenDice key={i} index={i} handleRemove={context.handleRemove} handleReroll={context.handleReroll} />);
-      }
-      else if(item.color == 'gray'){
-        output.push(<GrayDice key={i} index={i} handleRemove={context.handleRemove} handleReroll={context.handleReroll} />);
-      }
-      else if(item.color == 'black'){
-        output.push(<BlackDice key={i} index={i} handleRemove={context.handleRemove} handleReroll={context.handleReroll} />);
-      }
-      else if(item.color == 'brown'){
-        output.push(<BrownDice key={i} index={i} handleRemove={context.handleRemove} handleReroll={context.handleReroll} />);
-      }
+      output.push(<Dice key={i} index={i} diceData={item} {...context.props}  />);
     });
 
     return output;
-  }
-
-  handleRemove(index){
-    this.props.dispatch(removeDice(index));
-  }
-  handleReroll(index){
-    //this.props.dispatch(removeDice(index));
   }
 }
 
