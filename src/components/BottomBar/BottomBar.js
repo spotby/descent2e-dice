@@ -50,13 +50,20 @@ export default class BottomBar extends Component {
   }
 
   handleRoll(e){
-    this.props.dispatch(rollDice());
-    
     const target = $(e.target);
-    target.html("<img src='/img/ajax-loader-green.gif' />");
-    setTimeout(function(){
-      target.html("Roll");
-    }, 500);
+
+    if(!target.hasClass('disabled')){
+      target.addClass('disabled');
+
+      this.props.dispatch(rollDice());
+
+      target.html("<img src='/img/ajax-loader-green.gif' />");
+
+      setTimeout(function(){
+        target.html("Roll");
+        target.removeClass('disabled');
+      }, 500);
+    }
   }
 
   handleReset(e){

@@ -8,8 +8,8 @@
 
     .remove-dice{
       position: absolute;
-      top: -10px;
-      right: -12px;
+      top: -15px;
+      right: -17px;
       cursor: pointer;
 
       .fa-circle{
@@ -31,7 +31,147 @@
     height: 64px;
     width: 64px;
     border-radius: 10px;
+    color: #fff;
+    font-family: 'Almendra SC', serif;
+
+    .offense{
+      .miss{
+        width: 37px;
+        padding-top: 6px;
+        margin: auto;
+
+        i{
+          font-size: 48px;
+        }
+      }
+      .range{
+        font-size: 42px;
+        line-height: 38px;
+        padding-left: 5px;
+        display: inline-block;
+      }
+      .heart{
+        font-size: 14px;
+      }
+      .surge{
+        font-size: 18px;
+      }
+      &.with-range{
+        .hearts{
+          position: absolute;
+          left: 26px;
+          top: 7px;
+
+          &.hearts-1{
+            .heart-1{
+              margin-left: 10px;
+            }
+          }
+          &.hearts-2{
+            .heart-1 {
+              margin-right: 3px;
+            }
+          }
+        }
+        .surges{
+          position: absolute;
+          left: 26px;
+          top: 37px;
+
+          &.surges-1{
+            .surge-1{
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+      &.no-range{
+        .surges{
+          position: absolute;
+          left: 16px;
+          top: 40px;
+
+          &.surges-1{
+            .surge-1{
+              margin-left: 12px;
+            }
+          }
+        }
+
+        .hearts{
+          &.hearts-1{
+            &.no-surges{
+              position: absolute;
+              left: 25px;
+              top: 22px;
+            }
+            &.with-surges{
+
+            }
+          }
+          &.hearts-2{
+            &.no-surges{
+              position: absolute;
+              left: 16px;
+              top: 13px;
+
+              .heart-1{
+                position: relative;
+                top: 18px;
+                left: 0;
+              }
+              .heart-2{
+                position: relative;
+                left: 5px;
+                top: 0;
+              }
+            }
+            &.with-surges{
+
+            }
+          }
+          &.hearts-3{
+            &.no-surges{
+              position: absolute;
+              left: 10px;
+              top: 10px;
+              .heart-1{
+
+              }
+              .heart-2{
+                position: relative;
+                left: 2px;
+                top: 14px;
+              }
+              .heart-3{
+                position: relative;
+                left: 3px;
+                top: 28px;
+              }
+            }
+            &.with-surges{
+              position: absolute;
+              left: 15px;
+              top: 7px;
+              .heart-1{
+
+              }
+              .heart-2{
+                position: relative;
+                top: 14px;
+                left: -4px;
+              }
+              .heart-3{
+                position: relative;
+                left: - 8px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
   .blue-dice{
     background-color: $dice-blue;
   }
@@ -40,6 +180,7 @@
   }
   .yellow-dice{
     background-color: $dice-yellow;
+    color: #000;
   }
   .green-dice{
     background-color: $dice-green;

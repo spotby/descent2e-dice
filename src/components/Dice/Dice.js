@@ -12,7 +12,7 @@ export default class Dice extends Component {
 
     this.handleRemove = this.handleRemove.bind(this);
     this.handleReroll = this.handleReroll.bind(this);
-
+    this.displayFace = this.displayFace.bind(this);
   }
   componentDidMount(){
 
@@ -20,14 +20,15 @@ export default class Dice extends Component {
 
   render(){
     let face;
-    let faceIndex = this.props.diceData.faceIndex;
-    if(faceIndex){
-      face = this.displayFace(this.faces[faceIndex]);
+    if(this.props.diceData.face){
+      face = this.displayFace(this.props.diceData);
     }
 
     return (
       <div className="dice-container" data-index={this.props.index}>
-        <div className={"dice "+this.props.diceData.color+"-dice"}>{face}</div>
+        <div className={"dice "+this.props.diceData.color+"-dice"}>
+          {face}
+        </div>
 
         <div className="remove-dice" onClick={this.handleRemove}>
           <span className="fa-stack">
@@ -49,11 +50,62 @@ export default class Dice extends Component {
 
   }
 
-  displayFace(arr){
-    console.log(arr);
-    const output = [];
+  displayFace(data){
+    let output;
+
+    if(data.type == 'offense'){
+      if(data.face.miss){
+        output = (
+          <div className="offense">
+            <div className="miss">
+              <i className="fa fa-remove"></i>
+            </div>
+          </div>
+        );
+      }
+      else{
+        output = (
+          <div className={(data.face.range != 0) ? "offense with-range" : "offense no-range"}>
+            {(data.face.range != 0) ?
+              <div className="range">
+                {data.face.range}
+              </div>
+              : null
+            }
+
+            {this.outputHearts(data)}
+            {this.outputSurges(data)}
+          </div>
+        );
+      }
+    }
+    else{
+
+    }
 
     return output;
+  }
+
+  outputHearts(data){
+    const hearts = [];
+
+    for(var i = 0; i < data.face.hearts; i++){
+      hearts .push(<i key={i} className={"fa fa-heart heart heart-"+(i+1)}></i>);
+    }
+
+    return <div className={(data.face.surges) ? "hearts hearts-"+data.face.hearts+ " with-surges" : "hearts hearts-"+data.face.hearts+" no-surges"}>
+      {hearts}
+    </div>;
+  }
+
+  outputSurges(data){
+    const surges = [];
+
+    for(var i = 0; i < data.face.surges; i++){
+      surges.push(<i key={i} className={"fa fa-bolt surge surge-"+(i+1)}></i>);
+    }
+
+    return <div className={(data.face.hearts) ? "surges surges-"+data.face.surges : "surges surges-"+data.face.surges+" no-hearts"  }>{surges}</div>;
   }
 }
 

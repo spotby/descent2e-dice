@@ -22,11 +22,13 @@ export default class DiceSelector extends Component {
             <div className="selectable-dice red" data-color="red" onClick={this.selectDice}></div>
             <div className="selectable-dice yellow" data-color="yellow" onClick={this.selectDice}></div>
             <div className="selectable-dice green" data-color="green" onClick={this.selectDice}></div>
+            <div className="clearfix"></div>
           </div>
           <div className="dice-selector-row">
             <div className="selectable-dice gray" data-color="gray" onClick={this.selectDice}></div>
             <div className="selectable-dice black" data-color="black" onClick={this.selectDice}></div>
             <div className="selectable-dice brown" data-color="brown" onClick={this.selectDice}></div>
+            <div className="clearfix"></div>
           </div>
         </div>
       </div>

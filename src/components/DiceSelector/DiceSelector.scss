@@ -7,7 +7,7 @@
   padding: 0 0 5px 0;
 
   .dice-selector-row{
-    overflow: hidden;
+    overflow: visible;
   }
 
   .selectable-dice{
@@ -17,6 +17,10 @@
     margin: 0 5px 5px 0;
     float: left;
     cursor: pointer;
+
+    &:active{
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
 
     &.blue{
       background-color: $dice-blue;
