@@ -3,7 +3,7 @@
 .selected-dice{
   .dice-container{
     float: left;
-    margin: 0 20px 10px 0;
+    margin: 10px 20px 5px 0;
     position: relative;
 
     .remove-dice{
@@ -45,9 +45,9 @@
         }
       }
       .range{
-        font-size: 42px;
-        line-height: 38px;
-        padding-left: 5px;
+        font-size: 40px;
+        line-height: 36px;
+        padding-left: 6px;
         display: inline-block;
       }
       .heart{
@@ -59,17 +59,29 @@
       &.with-range{
         .hearts{
           position: absolute;
-          left: 26px;
+          left: 27px;
           top: 7px;
 
           &.hearts-1{
-            .heart-1{
-              margin-left: 10px;
+            &.no-surges{
+              .heart-1{
+                margin-left: 10px;
+              }
+            }
+            &.with-surges{
+              .heart-1{
+                margin-left: 10px;
+              }
             }
           }
           &.hearts-2{
+            left: 40px;
             .heart-1 {
-              margin-right: 3px;
+              position: relative;
+            }
+            .heart-2{
+              position: relative;
+              top: -5px;
             }
           }
         }
@@ -79,21 +91,62 @@
           top: 37px;
 
           &.surges-1{
-            .surge-1{
-              margin-left: 12px;
+            &.no-hearts{
+              .surge-1{
+                position: relative;
+                left: 10px;
+                top: -5px;
+              }
+            }
+            &.with-hearts{
+              &.with-hearts-1{
+                .surge-1{
+                  position: relative;
+                  left: 13px;
+                  top: -2px;
+                }
+              }
+              &.with-hearts-2{
+                .surge-1{
+                  position: relative;
+                  left: 3px;
+                  top: 0;
+                }
+              }
             }
           }
         }
       }
       &.no-range{
         .surges{
-          position: absolute;
-          left: 16px;
-          top: 40px;
+          &.with-hearts{
+            position: absolute;
+            left: 16px;
+            top: 40px;
 
-          &.surges-1{
-            .surge-1{
-              margin-left: 12px;
+            &.with-hearts-1{
+              top: 35px;
+            }
+
+            &.with-hearts-2{
+              top: 35px;
+              left: 5px;
+            }
+
+            &.surges-1{
+              .surge-1{
+                margin-left: 12px;
+              }
+            }
+          }
+          &.no-hearts{
+            &.surges-1{
+              position: absolute;
+              left: 28px;
+              top: 22px;
+              .surge-1{
+
+              }
             }
           }
         }
@@ -106,7 +159,9 @@
               top: 22px;
             }
             &.with-surges{
-
+              position: absolute;
+              left: 25px;
+              top: 10px;
             }
           }
           &.hearts-2{
@@ -127,7 +182,18 @@
               }
             }
             &.with-surges{
+              position: absolute;
+              top: 10px;
+              left: 35px;
 
+              .heart-1{
+
+              }
+              .heart-2{
+                position: relative;
+                left: -14px;
+                top: 16px;
+              }
             }
           }
           &.hearts-3{
@@ -163,10 +229,81 @@
               }
               .heart-3{
                 position: relative;
-                left: - 8px;
+                left: -8px;
               }
             }
           }
+        }
+      }
+    }
+    .defense{
+      .shields{
+        .shield{
+          font-size: 24px;
+        }
+      }
+      .shields-1{
+        .shield-1{
+          position: relative;
+          top: 20px;
+          left: 23px;
+        }
+      }
+      .shields-2{
+        position: relative;
+        top: 8px;
+        left: 10px;
+
+        .shield-1{
+
+        }
+        .shield-2{
+          position: relative;
+          top: 25px;
+          left: 10px;
+        }
+      }
+      .shields-3{
+        position: relative;
+        top: 8px;
+        left: 10px;
+
+        .shield-1{
+
+        }
+        .shield-2{
+          position: relative;
+          left: 10px;
+        }
+        .shield-3{
+          position: relative;
+          left: -20px;
+          top: 25px;
+        }
+      }
+      .shields-4{
+        position: relative;
+        top: 8px;
+        left: 10px;
+
+        .shield-1{
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .shield-2{
+          position: absolute;
+          left: 25px;
+        }
+        .shield-3{
+          position: absolute;
+          left: 0px;
+          top: 25px;
+        }
+        .shield-4{
+          position: absolute;
+          left: 25px;
+          top: 25px;
         }
       }
     }
@@ -187,6 +324,7 @@
   }
   .gray-dice{
     background-color: $dice-gray;
+    color: #000;
   }
   .black-dice{
     background-color: $dice-black;
