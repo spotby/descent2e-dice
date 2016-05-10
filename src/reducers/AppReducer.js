@@ -4,7 +4,7 @@ import {
 
 
 const initialState = {
-  selected: []
+
 };
 
 export function App(state = initialState, action = null) {

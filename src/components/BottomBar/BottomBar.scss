@@ -1,0 +1,66 @@
+.bottom-bar{
+  position: fixed;
+  bottom: 0;
+  background-color: #eee;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+
+  .roll-btn{
+    margin-right: 15px;
+    width: 50px;
+  }
+  .reset-btn{
+    margin-right: 15px;
+  }
+}
+
+.fa-bow-arrow{
+  background: url(/img/bow-arrow.svg) no-repeat center;
+  background-size: contain;
+  height: 18px;
+  width: 18px;
+  margin-right: 3px;
+  position: relative;
+  top: 3px;
+}
+
+.totals{
+  display: inline-block;
+  font-size: 20px;
+
+  .offense-total{
+    display: inline-block;
+  }
+  .miss{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .hearts{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .surges{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .range{
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .defense-total{
+    display: inline-block;
+  }
+  .shields{
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .totals{
+    display: block;
+    padding: 10px 0 0 0;
+  }
+
+}

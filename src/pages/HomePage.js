@@ -5,6 +5,8 @@ import {Link} from 'react-router';
 import {tester} from '../actions/App/AppActions';
 
 import DiceSelector from 'components/DiceSelector/DiceSelector.js';
+import SelectedDice from 'components/SelectedDice/SelectedDice.js';
+import BottomBar from 'components/BottomBar/BottomBar.js';
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -20,6 +22,8 @@ export default class HomePage extends Component {
     return (
       <div>
         <DiceSelector />
+        <SelectedDice />
+        <BottomBar />
       </div>
     );
   }
