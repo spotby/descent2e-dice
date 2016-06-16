@@ -23,6 +23,7 @@ export function removeDice(index){
 }
 
 export function rollDice(){
+  playDiceRollSound();
   return {
     type: ROLL_DICE
   }
@@ -35,6 +36,7 @@ export function resetDice(){
 }
 
 export function rerollDice(index){
+  playDiceRollSound();
   return{
     type: REROLL_DICE,
     value: index
@@ -64,4 +66,11 @@ export function clearTotals(){
   return {
     type: CLEAR_TOTALS
   }
+}
+
+function playDiceRollSound(){
+  const audio = $('#audioDiceRoll')[0];
+  audio.pause();
+  audio.currentTime = 0;
+  audio.play();
 }

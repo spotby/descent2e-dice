@@ -64,7 +64,7 @@ export default class Dice extends Component {
         context.props.dispatch(calcTotals());
         icon.removeClass('fa-spin');
         icon.removeClass('disabled');
-      },  750);
+      },  250);
     }
 
   }
