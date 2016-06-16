@@ -64,9 +64,9 @@ export default class BottomBar extends Component {
         }
         else{
           x = <div>
-            <div className="hearts"><i className="fa fa-heart"></i> {totals.hearts}</div>
-            <div className="surges"><i className="fa fa-bolt"></i> {totals.surges}</div>
-            <div className="range"><i className="fa fa-bow-arrow"></i> {totals.range}</div>
+            <div className="hearts" title="Hearts"><i className="fa fa-heart"></i> {totals.hearts}</div>
+            <div className="surges" title="Surges"><i className="fa fa-bolt"></i> {totals.surges}</div>
+            <div className="range" title="Range"><i className="fa fa-bow-arrow"></i> {totals.range}</div>
           </div>
         }
 
@@ -80,12 +80,12 @@ export default class BottomBar extends Component {
       if(totals.defense){
         dTotal = (
           <div className="defense-total">
-            <div className="shields"><i className="fa fa-shield"></i> {totals.shields}</div>
+            <div className="shields" title="Defense"><i className="fa fa-shield"></i> {totals.shields}</div>
           </div>
         );
       }
 
-      output.push(<div className="totals">{oTotal}{dTotal}</div>);
+      output.push(<div className="totals" key="1">{oTotal}{dTotal}</div>);
     }
 
     return output;
@@ -114,7 +114,7 @@ export default class BottomBar extends Component {
 
         target.html("Roll");
         target.removeClass('disabled');
-      }, 500);
+      }, 250);
     }
   }
 

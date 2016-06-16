@@ -24,6 +24,7 @@ export default class HomePage extends Component {
         <DiceSelector />
         <SelectedDice />
         <BottomBar />
+        <audio id="audioDiceRoll" src="audio/dice-roll.mp3" preload="auto"></audio>
       </div>
     );
   }
