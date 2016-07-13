@@ -17,11 +17,13 @@ export default class SelectedDice extends Component {
     const dice = this.displayDice();
 
     return (
-      <div className={(this.props.Dice.selected.length) ? "selected-dice-container container-fluid" : "selected-dice-container container-fluid hide"}>
-        <p>Selected Dice</p>
+      <div className="col-xs-12 col-sm-6 col-md-6">
+        <div className="selected-dice-container">
+          <p>Selected Dice</p>
 
-        <div className="selected-dice">
-          {dice}
+          <div className="selected-dice">
+            {dice}
+          </div>
         </div>
       </div>
     )

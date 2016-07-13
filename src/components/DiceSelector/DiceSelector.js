@@ -18,16 +18,16 @@ export default class DiceSelector extends Component {
         <p>Select your Dice</p>
         <div className="dice-selector">
           <div className="dice-selector-row">
-            <div className="selectable-dice blue" data-color="blue" onClick={this.selectDice}></div>
-            <div className="selectable-dice red" data-color="red" onClick={this.selectDice}></div>
-            <div className="selectable-dice yellow" data-color="yellow" onClick={this.selectDice}></div>
-            <div className="selectable-dice green" data-color="green" onClick={this.selectDice}></div>
+            <div className="selectable-dice blue" data-color="blue" data-index="0" onClick={this.selectDice}></div>
+            <div className="selectable-dice red" data-color="red" data-index="1" onClick={this.selectDice}></div>
+            <div className="selectable-dice yellow" data-color="yellow" data-index="2" onClick={this.selectDice}></div>
+            <div className="selectable-dice green" data-color="green" data-index="3" onClick={this.selectDice}></div>
             <div className="clearfix"></div>
           </div>
           <div className="dice-selector-row">
-            <div className="selectable-dice gray" data-color="gray" onClick={this.selectDice}></div>
-            <div className="selectable-dice black" data-color="black" onClick={this.selectDice}></div>
-            <div className="selectable-dice brown" data-color="brown" onClick={this.selectDice}></div>
+            <div className="selectable-dice gray" data-color="gray" data-index="4" onClick={this.selectDice}></div>
+            <div className="selectable-dice black" data-color="black" data-index="5" onClick={this.selectDice}></div>
+            <div className="selectable-dice brown" data-color="brown" data-index="6" onClick={this.selectDice}></div>
             <div className="clearfix"></div>
           </div>
         </div>
@@ -36,9 +36,9 @@ export default class DiceSelector extends Component {
   }
 
   selectDice(e){
-    const color = $(e.target).attr('data-color');
+    const index = $(e.target).attr('data-index');
 
-    this.props.dispatch(selectDice(color));
+    this.props.dispatch(selectDice(index));
   }
 }
 
