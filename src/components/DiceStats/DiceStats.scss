@@ -1,0 +1,46 @@
+.dice-stats-container{
+  table{
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+
+    thead th{
+      background-color: #333;
+      color: #fff;
+
+
+      .fa-heart{
+        font-size: 18px;
+      }
+      .fa-bolt{
+        font-size: 20px;
+      }
+      .fa-shield{
+        font-size: 20px;
+      }
+      .fa-remove{
+        font-size: 22px;
+      }
+
+      .fa-bow-arrow{
+
+      }
+    }
+  }
+}
+
+.show-stats-button-container{
+  position: absolute;
+  right: -33px;
+  top: -70px;
+  transform: rotate(-90deg);
+
+  .btn{
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 0;
+  }
+}
+.hide-stats-button-container{
+
+}

@@ -111,6 +111,7 @@ export default class BottomBar extends Component {
       setTimeout(function(){
         context.props.dispatch(rollDice());
         context.props.dispatch(calcTotals());
+        context.handleResize();
 
         target.html("Roll");
         target.removeClass('disabled');
@@ -121,6 +122,7 @@ export default class BottomBar extends Component {
   handleReset(e){
     this.props.dispatch(resetDice());
     this.props.dispatch(clearTotals());
+    context.handleResize();
   }
 }
 

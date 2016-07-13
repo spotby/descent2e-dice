@@ -7,11 +7,13 @@ export const CLEAR_ALL_DICE = 'CLEAR_ALL_DICE';
 export const CLEAR_DICE = 'CLEAR_DICE';
 export const CALC_TOTALS = 'CALC_TOTALS';
 export const CLEAR_TOTALS = 'CLEAR_TOTALS';
+export const SHOW_STATS_MOBILE = 'SHOW_STATS_MOBILE';
+export const HIDE_STATS_MOBILE = 'HIDE_STATS_MOBILE';
 
-export function selectDice(color){
+export function selectDice(index){
   return {
     type: SELECT_DICE,
-    value: {color: color}
+    value: index
   };
 }
 
@@ -65,6 +67,18 @@ export function calcTotals(){
 export function clearTotals(){
   return {
     type: CLEAR_TOTALS
+  }
+}
+
+export function showStatsMobile(){
+  return {
+    type: SHOW_STATS_MOBILE
+  }
+}
+
+export function hideStatsMobile(){
+  return {
+    type: HIDE_STATS_MOBILE
   }
 }
 
